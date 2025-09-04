@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="UI Suite" verbose="1" parallel="tests" thread-count="2">
+
+    <listeners>
+        <listener class-name="base.AllureListener"/>
+    </listeners>
+    <test name="Functional">
+        <packages>
+            <package name="tests.functionality"/>
+        </packages>
+    </test>
+
+    <test name="Validation">
+        <packages>
+            <package name="tests.validation"/>
+        </packages>
+    </test>
+
+    <test name="E2E">
+        <packages>
+            <package name="tests.e2e"/>
+        </packages>
+    </test>
+</suite>
