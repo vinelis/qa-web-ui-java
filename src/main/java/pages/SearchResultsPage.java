@@ -22,4 +22,12 @@ public class SearchResultsPage extends BasePage {
         return driver.findElement(noResultMessage).getText();
     }
 
+    public boolean isNoResultsMessageDisplayed() {
+        try {
+            return driver.findElement(noResultMessage).isDisplayed();
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
+    }
+
 }
