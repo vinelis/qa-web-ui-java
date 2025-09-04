@@ -34,4 +34,21 @@ public class ContactFormValidationTest extends BaseTests {
 
     }
 
+    /**
+     * Verifies that the contact form displays the appropriate error messages
+     * for all required fields when the form is submitted empty. This test
+     * ensures that the mandatory field validation is working correctly.
+     */
+    @Test
+    public void emptyRequiredFieldsValidationTest(){
+        driver.get("https://osvaldovinelli.com.ar/propiedad/526204");
+        PropertyDetail propertyDetail = new PropertyDetail(driver);
+
+        propertyDetail.submitForm();
+
+        Assert.assertEquals(propertyDetail.getNameErrorText(), "Ingresá tu nombre", "Error message for empty Name field is incorrect.");
+        Assert.assertEquals(propertyDetail.getEmailErrorText(), "Ingresá un email válido", "Error message for empty Email field is incorrect.");
+        Assert.assertEquals(propertyDetail.getPhoneErrorText(), "Ingresá tu teléfono", "Error message for empty Phone field is incorrect.");
+    }
+
 }
