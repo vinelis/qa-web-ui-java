@@ -1,6 +1,6 @@
-package tests.functionality;
+package seleniumtestng.functionality;
 
-import base.BaseTests;
+import seleniumtestng.base.BaseTests;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

@@ -1,6 +1,6 @@
-package tests.e2e;
+package seleniumtestng.e2e;
 
-import base.BaseTests;
+import seleniumtestng.base.BaseTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.PropertyDetail;
