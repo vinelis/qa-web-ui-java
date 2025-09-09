@@ -40,7 +40,7 @@ public class SearchFunctionalityTest extends BaseTests {
      * @param shouldFindResults TRUE if the search should return properties, FALSE otherwise.
      */
     @Test(dataProvider = "searchDataProvider")
-    public void successfulSearchWithMultipleCriteriaTest(String propertyType, String location, String operation, boolean shouldFindResults){
+    public void verifySearchFunctionality(String propertyType, String location, String operation, boolean shouldFindResults){
         homePage.setOperationLocationAndPropertyTypeSuccessfully(operation, propertyType, location);
         SearchResultsPage searchResultsPage = homePage.clickSearchButton();
 
