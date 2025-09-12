@@ -3,23 +3,30 @@
 <suite name="UI Suite" verbose="1" parallel="tests" thread-count="2">
 
     <listeners>
-        <listener class-name="base.AllureListener"/>
+        <listener class-name="seleniumtestng.base.AllureListener"/>
     </listeners>
     <test name="Functional">
         <packages>
-            <package name="tests.functionality"/>
+            <package name="seleniumtestng.functionality"/>
         </packages>
     </test>
 
     <test name="Validation">
         <packages>
-            <package name="tests.validation"/>
+            <package name="seleniumtestng.validation"/>
         </packages>
     </test>
 
     <test name="E2E">
         <packages>
-            <package name="tests.e2e"/>
+            <package name="seleniumtestng.e2e"/>
         </packages>
     </test>
+
+    <test name="BDD">
+        <classes>
+            <class name="cucumbertests.runners.ContactFormCucumberTest"/>
+        </classes>
+    </test>
+
 </suite>
