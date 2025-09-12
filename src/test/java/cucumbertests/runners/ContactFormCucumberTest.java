@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/resources/features",
         glue = {"cucumbertests.stepDefinitions", "cucumbertests.hooks"},
         plugin = {"pretty","summary","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
-        tags = "@smoke or @negative"
+        tags = "@smoke or @negative or @outline"
 )
 
 public class ContactFormCucumberTest extends AbstractTestNGCucumberTests {}

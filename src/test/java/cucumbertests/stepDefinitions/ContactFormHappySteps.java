@@ -3,7 +3,6 @@ package cucumbertests.stepDefinitions;
 import cucumbertests.hooks.Hooks;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
-import org.openqa.selenium.WebDriver;
 import static org.testng.Assert.assertEquals;
 
 import java.util.Map;
