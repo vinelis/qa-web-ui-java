@@ -19,6 +19,32 @@ The framework is architected to be **robust, scalable, and easily maintainable**
 
 ---
 
+## ✅ Implemented Test Scenarios
+
+The framework currently automates key end-to-end flows and validation cases, such as:
+
+- **Login**
+    - Valid login with correct credentials.
+    - Error handling with invalid credentials.
+
+- **Search Functionality**
+    - Property search by location, type, and operation (e.g., house for sale).
+    - Validation of “no results” messages when no properties match.
+
+- **Property Details**
+    - Opening a property detail page from search results.
+    - Validation that price, description, and contact information are displayed.
+
+- **Contact Form**
+    - Filling in and verifying form fields with user data (BDD scenario).
+    - Validation of form persistence and input correctness.
+
+These cover both **happy paths** and **negative cases**, ensuring functional validation and resilience of the UI.
+
+
+
+---
+
 ## 🛠️ Tech Stack
 
 * **Language**: Java 17
@@ -62,7 +88,7 @@ allure serve
 
 This will generate the report and open it in your default web browser.
 
-
+![allure-report.png](assets/allure-report.png)
 
 ---
 
