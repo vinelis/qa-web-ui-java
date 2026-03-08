@@ -37,3 +37,8 @@ build/
 
 # Logs
 logs/
+
+# Allure Report
+/allure-results/
+/allure-report/
+/target/

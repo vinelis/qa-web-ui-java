@@ -18,19 +18,21 @@ public class AllureListener implements ITestListener {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
+    private static WebDriver getDriver(ITestResult iTestResult) {
+        Object instance = iTestResult.getInstance();
+        if (instance instanceof BaseTests) {
+            WebDriver d = ((BaseTests) instance).driver;
+            if (d != null) return d;
+        }
+        return DriverHolder.get();
+    }
+
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         System.out.println("Taking screenshot on failure for test " + getTestMethodName(iTestResult));
-        Object testClass = iTestResult.getInstance();
-        WebDriver driver;
-
-        try {
-           driver = ((BaseTests) testClass).driver;
-            if (driver != null) {
-                saveScreenshotPNG(driver);
-            }
-        } catch (ClassCastException e) {
-            e.printStackTrace();
+        WebDriver driver = getDriver(iTestResult);
+        if (driver != null) {
+            saveScreenshotPNG(driver);
         }
     }
 }

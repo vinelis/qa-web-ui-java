@@ -7,11 +7,6 @@ import pages.PropertyDetail;
 
 public class ContactFormValidationTest extends BaseTests {
 
-    /**
-     * Verifies that the contact form displays a specific validation error
-     * when a user enters an email with an invalid format. This test checks
-     * the client-side validation rules for the email field.
-     */
     @Test
     public void invalidEmailFormatValidationTest() {
         driver.get("https://osvaldovinelli.com.ar/propiedad/526204");
@@ -26,7 +21,7 @@ public class ContactFormValidationTest extends BaseTests {
         propertyDetail.setPhoneNumberField(phone);
         propertyDetail.submitForm();
 
-        String expectedErrorMessage = "Ingresá un email válido";
+        String expectedErrorMessage = "Ingresá tu email válido";
         String actualErrorMessage = propertyDetail.getEmailErrorText();
 
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage,
@@ -34,11 +29,6 @@ public class ContactFormValidationTest extends BaseTests {
 
     }
 
-    /**
-     * Verifies that the contact form displays the appropriate error messages
-     * for all required fields when the form is submitted empty. This test
-     * ensures that the mandatory field validation is working correctly.
-     */
     @Test
     public void emptyRequiredFieldsValidationTest(){
         driver.get("https://osvaldovinelli.com.ar/propiedad/526204");
@@ -47,7 +37,7 @@ public class ContactFormValidationTest extends BaseTests {
         propertyDetail.submitForm();
 
         Assert.assertEquals(propertyDetail.getNameErrorText(), "Ingresá tu nombre", "Error message for empty Name field is incorrect.");
-        Assert.assertEquals(propertyDetail.getEmailErrorText(), "Ingresá un email válido", "Error message for empty Email field is incorrect.");
+        Assert.assertEquals(propertyDetail.getEmailErrorText(), "Ingresá tu email", "Error message for empty Email field is incorrect.");
         Assert.assertEquals(propertyDetail.getPhoneErrorText(), "Ingresá tu teléfono", "Error message for empty Phone field is incorrect.");
     }
 

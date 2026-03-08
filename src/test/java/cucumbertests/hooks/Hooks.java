@@ -17,11 +17,15 @@ public class Hooks {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        seleniumtestng.base.DriverHolder.set(driver);
     }
 
     @After
     public void tearDown() {
-        if (driver != null) driver.quit();
+        if (driver != null) {
+            seleniumtestng.base.DriverHolder.remove();
+            driver.quit();
+        }
     }
 
     public WebDriver getDriver() { return driver; }

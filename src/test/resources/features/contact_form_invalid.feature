@@ -14,7 +14,7 @@ Feature: Contact form - invalid inputs (email/phone)
 
     Examples:
       | field | email         | phone            | expectedError             |
-      | email | not-an-email  | +54 11 1234 5678 | Ingresá un email válido   |
+      | email | not-an-email  | +54 11 1234 5678 | Ingresá tu email válido   |
 
       # Known bug: phone field accepts letters, no error is shown
       # | phone | luca@mail.com | abcdef | Ingresá tu teléfono |

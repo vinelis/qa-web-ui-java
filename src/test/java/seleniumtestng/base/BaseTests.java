@@ -30,11 +30,13 @@ public class BaseTests {
 
         driver.manage().window().maximize();
         driver.get(baseUrl);
+        DriverHolder.set(driver);
         homePage = new HomePage(driver);
     }
 
     @AfterMethod
     public void tearDown(){
+        DriverHolder.remove();
         driver.quit();
     }
 

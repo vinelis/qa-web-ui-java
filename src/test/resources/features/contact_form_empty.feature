@@ -12,5 +12,5 @@ Feature: Contact form validation - empty required fields
     Then I should see error messages:
       | field | errorMessage            |
       | name  | Ingresá tu nombre       |
-      | email | Ingresá un email válido |
+      | email | Ingresá tu email     |
       | phone | Ingresá tu teléfono     |
