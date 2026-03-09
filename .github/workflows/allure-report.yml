@@ -30,8 +30,13 @@ jobs:
           java-version: 17
           cache: maven
 
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          install-dependencies: true
+
       - name: Run tests
-        run: mvn clean test
+        run: mvn clean test -Dheadless=true
         continue-on-error: true
 
       - name: Allure Report

@@ -5,6 +5,7 @@ import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import pages.PropertyDetail;
 
 public class Hooks {
@@ -15,7 +16,16 @@ public class Hooks {
     @Before
     public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+        boolean headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+        ChromeOptions options = new ChromeOptions();
+        if (headless) {
+            options.addArguments("--headless=new");
+            options.addArguments("--window-size=1920,1080");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+        }
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         seleniumtestng.base.DriverHolder.set(driver);
     }
