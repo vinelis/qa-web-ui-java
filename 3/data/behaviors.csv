@@ -1,0 +1,5 @@
+"BROKEN","EPIC","FAILED","FEATURE","PASSED","SKIPPED","STORY","UNKNOWN"
+"0","","0","Contact form validation (Happy path only)","1","0","Submit form with valid data (without real submit)","0"
+"1","","0","Contact form validation - empty required fields","0","0","Submit form with empty required fields","0"
+"1","","0","Contact form - invalid inputs (email/phone)","0","0","Invalid email or phone shows proper error","0"
+"3","","3","","1","0","","0"
