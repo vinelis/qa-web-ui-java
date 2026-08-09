@@ -41,8 +41,10 @@ public class BaseTests {
 
     @AfterMethod
     public void tearDown(){
-        DriverHolder.remove();
-        driver.quit();
+        if (driver != null) {
+            DriverHolder.remove();
+            driver.quit();
+        }
     }
 
 }
