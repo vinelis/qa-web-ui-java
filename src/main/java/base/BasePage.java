@@ -37,18 +37,6 @@ public class BasePage {
         }
     }
 
-    public void safeClick(WebElement element) {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
-            scrollToElement(element);
-            wait.until(ExpectedConditions.elementToBeClickable(element)).click();
-        } catch (TimeoutException e) {
-            throw new RuntimeException("No se pudo hacer click en el WebElement después de " + TIMEOUT + " segundos", e);
-        } catch (ElementClickInterceptedException e) {
-            jsClick(element);
-        }
-    }
-
     private void scrollToElement(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
     }
