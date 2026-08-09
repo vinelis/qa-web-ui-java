@@ -1,5 +1,6 @@
 package seleniumtestng.base;
 
+import config.TestConfig;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -14,7 +15,6 @@ public class BaseTests {
     public void setUp(){
         String browser  = System.getProperty("browser", "chrome");
         boolean headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
-        String baseUrl  = System.getProperty("baseUrl", "https://osvaldovinelli.com.ar/");
 
         if ("chrome".equalsIgnoreCase(browser)) {
             io.github.bonigarcia.wdm.WebDriverManager.chromedriver().setup();
@@ -34,7 +34,7 @@ public class BaseTests {
         if (!headless) {
             driver.manage().window().maximize();
         }
-        driver.get(baseUrl);
+        driver.get(TestConfig.BASE_URL);
         DriverHolder.set(driver);
         homePage = new HomePage(driver);
     }

@@ -1,5 +1,6 @@
 package seleniumtestng.validation;
 
+import config.TestConfig;
 import seleniumtestng.base.BaseTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -9,7 +10,7 @@ public class ContactFormValidationTest extends BaseTests {
 
     @Test
     public void invalidEmailFormatValidationTest() {
-        driver.get("https://osvaldovinelli.com.ar/propiedad/526204");
+        driver.get(TestConfig.PROPERTY_DETAIL_URL);
         PropertyDetail propertyDetail = new PropertyDetail(driver);
 
         String name = "Luca Vinelli";
@@ -31,7 +32,7 @@ public class ContactFormValidationTest extends BaseTests {
 
     @Test
     public void emptyRequiredFieldsValidationTest(){
-        driver.get("https://osvaldovinelli.com.ar/propiedad/526204");
+        driver.get(TestConfig.PROPERTY_DETAIL_URL);
         PropertyDetail propertyDetail = new PropertyDetail(driver);
 
         propertyDetail.submitForm();

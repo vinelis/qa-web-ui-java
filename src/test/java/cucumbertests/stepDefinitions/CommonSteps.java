@@ -1,5 +1,6 @@
 package cucumbertests.stepDefinitions;
 
+import config.TestConfig;
 import cucumbertests.hooks.Hooks;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +18,7 @@ public class CommonSteps {
 
     @Given("I am on the Property Detail page")
     public void i_am_on_the_property_detail_page() {
-        driver.get("https://osvaldovinelli.com.ar/propiedad/526204");
+        driver.get(TestConfig.PROPERTY_DETAIL_URL);
         hooks.setPropertyDetail(new PropertyDetail(driver));
     }
 }
