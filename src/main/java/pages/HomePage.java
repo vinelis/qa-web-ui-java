@@ -23,7 +23,7 @@ public class HomePage extends BasePage {
     }
 
     public SearchResultsPage clickSearchButton(){
-        safeClick(driver.findElement(searchBtn));
+        safeClick(searchBtn);
         return new SearchResultsPage(driver);
     }
 

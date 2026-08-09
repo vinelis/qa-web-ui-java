@@ -3,6 +3,7 @@ package base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,6 +31,9 @@ public class BasePage {
             throw new RuntimeException("No se pudo hacer click en el elemento: " + locator + " después de " + TIMEOUT + " segundos", e);
         } catch (ElementClickInterceptedException e) {
             jsClick(driver.findElement(locator));
+        } catch (StaleElementReferenceException e) {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
+            wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
         }
     }
 
