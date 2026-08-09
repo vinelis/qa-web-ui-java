@@ -37,7 +37,6 @@ jobs:
 
       - name: Run tests
         run: mvn clean test -Dheadless=true
-        continue-on-error: true
 
       - name: Allure Report
         uses: simple-elf/allure-report-action@master
