@@ -31,7 +31,9 @@ public class BaseTests {
             throw new IllegalArgumentException("Unsupported browser: " + browser);
         }
 
-        driver.manage().window().maximize();
+        if (!headless) {
+            driver.manage().window().maximize();
+        }
         driver.get(baseUrl);
         DriverHolder.set(driver);
         homePage = new HomePage(driver);

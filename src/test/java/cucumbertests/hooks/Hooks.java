@@ -26,7 +26,9 @@ public class Hooks {
             options.addArguments("--disable-gpu");
         }
         driver = new ChromeDriver(options);
-        driver.manage().window().maximize();
+        if (!headless) {
+            driver.manage().window().maximize();
+        }
         seleniumtestng.base.DriverHolder.set(driver);
     }
 
