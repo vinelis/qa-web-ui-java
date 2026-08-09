@@ -1,0 +1,13 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2383","verifySearchFunctionality","UI Suite","2026-08-09","passed","2026-08-09","seleniumtestng.functionality.SearchFunctionalityTest","Functional","seleniumtestng.functionality.SearchFunctionalityTest","verifySearchFunctionality"
+"","2600","emptyRequiredFieldsValidationTest","UI Suite","2026-08-09","passed","2026-08-09","seleniumtestng.validation.ContactFormValidationTest","Validation","seleniumtestng.validation.ContactFormValidationTest","emptyRequiredFieldsValidationTest"
+"  As a visitor
+  I want to submit the contact form without filling any fields
+  So that I can see proper validation error messages","4023","Submit form with empty required fields","","2026-08-09","passed","2026-08-09","","Contact form validation - empty required fields","Submit form with empty required fields",""
+"","3783","Invalid email or phone shows proper error","","2026-08-09","passed","2026-08-09","","Contact form - invalid inputs (email/phone)","Invalid email or phone shows proper error",""
+"","3593","searchForNonExistentPropertyTest","UI Suite","2026-08-09","passed","2026-08-09","seleniumtestng.functionality.SearchFunctionalityTest","Functional","seleniumtestng.functionality.SearchFunctionalityTest","searchForNonExistentPropertyTest"
+"","2435","invalidEmailFormatValidationTest","UI Suite","2026-08-09","passed","2026-08-09","seleniumtestng.validation.ContactFormValidationTest","Validation","seleniumtestng.validation.ContactFormValidationTest","invalidEmailFormatValidationTest"
+"","6184","successfullSearchAndContactFlowTest","UI Suite","2026-08-09","passed","2026-08-09","seleniumtestng.e2e.SearchAndContactTest","E2E","seleniumtestng.e2e.SearchAndContactTest","successfullSearchAndContactFlowTest"
+"","1850","verifySearchFunctionality","UI Suite","2026-08-09","passed","2026-08-09","seleniumtestng.functionality.SearchFunctionalityTest","Functional","seleniumtestng.functionality.SearchFunctionalityTest","verifySearchFunctionality"
+"","5156","Submit form with valid data (without real submit)","","2026-08-09","passed","2026-08-09","","Contact form validation (Happy path only)","Submit form with valid data (without real submit)",""
+"","2052","verifySearchFunctionality","UI Suite","2026-08-09","passed","2026-08-09","seleniumtestng.functionality.SearchFunctionalityTest","Functional","seleniumtestng.functionality.SearchFunctionalityTest","verifySearchFunctionality"
