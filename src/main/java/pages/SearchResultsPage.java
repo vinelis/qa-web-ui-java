@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class SearchResultsPage extends BasePage {
 
-    private static final By firstHouseBtn = By.xpath("//p[@class='titulo' and contains(text(), 'Excelente Lote')]");
+    private static final By firstPropertyCard = By.cssSelector("#prop-list a.prop-card");
     private static final By noResultMessage = By.cssSelector("p.alert__title");
 
     public SearchResultsPage(WebDriver driver){
@@ -14,7 +14,7 @@ public class SearchResultsPage extends BasePage {
     }
 
     public PropertyDetail clickToPropertyDetail(){
-        safeClick(firstHouseBtn);
+        safeClick(firstPropertyCard);
         return new PropertyDetail(driver);
     }
 
