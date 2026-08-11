@@ -37,6 +37,17 @@ public class BasePage {
         }
     }
 
+    public void safeType(By locator, String text) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
+            WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+            scrollToElement(element);
+            wait.until(ExpectedConditions.visibilityOf(element)).sendKeys(text);
+        } catch (TimeoutException e) {
+            throw new RuntimeException("No se pudo escribir en el elemento: " + locator + " después de " + TIMEOUT + " segundos", e);
+        }
+    }
+
     private void scrollToElement(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
     }

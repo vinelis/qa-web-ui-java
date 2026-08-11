@@ -23,15 +23,15 @@ public class PropertyDetail extends BasePage {
     private static final By phoneErrorMessage = By.xpath("//*[@id='consulta_form_telefono_error']/span");
 
     public void setNameField(String name){
-        driver.findElement(nameField).sendKeys(name);
+        safeType(nameField, name);
     }
 
     public void setEmailField(String email){
-        driver.findElement(emailField).sendKeys(email);
+        safeType(emailField, email);
     }
 
     public void setPhoneNumberField(String phoneNumber){
-        driver.findElement(phoneNumberField).sendKeys(phoneNumber);
+        safeType(phoneNumberField, phoneNumber);
     }
 
     public String getFirstAndLastNameFieldText(){
