@@ -51,18 +51,20 @@ public class PropertyDetail extends BasePage {
     }
 
     public String getEmailErrorText(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(emailErrorMessage)).getText();
+        return getErrorText(emailErrorMessage);
     }
 
     public String getNameErrorText(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(nameErrorMesssage)).getText();
+        return getErrorText(nameErrorMesssage);
     }
 
     public String getPhoneErrorText(){
+        return getErrorText(phoneErrorMessage);
+    }
+
+    private String getErrorText(By errorLocator){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(phoneErrorMessage)).getText();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(errorLocator)).getText();
     }
 
 
