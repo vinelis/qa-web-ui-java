@@ -44,7 +44,7 @@ public class SearchFunctionalityTest extends BaseTests {
         homePage.setOperationLocationAndPropertyTypeSuccessfully(operation, propertyType, location);
         SearchResultsPage searchResultsPage = homePage.clickSearchButton();
 
-        boolean hasNoResultsMessage = searchResultsPage.isNoResultsMessageDisplayed();
+        boolean hasNoResultsMessage = searchResultsPage.hasNoResultsMessage();
         Assert.assertEquals(!hasNoResultsMessage, shouldFindResults,
                 "Search expectation did not match the actual outcome for: " + propertyType + " in " + location);
     }
