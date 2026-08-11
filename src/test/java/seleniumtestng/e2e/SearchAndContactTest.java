@@ -15,13 +15,13 @@ public class SearchAndContactTest extends BaseTests {
      * the data entered into the form fields is correctly retained.
      */
     @Test
-    public void successfullSearchAndContactFlowTest(){
+    public void successfulSearchAndContactFlowTest(){
 
-        String operationtype = "Venta";
+        String operationType = "Venta";
         String propertyType = "Casas";
         String locationType = "Lomas de Zamora";
 
-        homePage.setOperationLocationAndPropertyTypeSuccessfully(operationtype,propertyType, locationType);
+        homePage.setOperationLocationAndPropertyTypeSuccessfully(operationType,propertyType, locationType);
         SearchResultsPage searchResultsPage = homePage.clickSearchButton();
         PropertyDetail propertyDetail = searchResultsPage.clickToPropertyDetail();
 

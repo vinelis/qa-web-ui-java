@@ -28,7 +28,7 @@ public class BasePage {
             scrollToElement(element);
             wait.until(ExpectedConditions.elementToBeClickable(element)).click();
         } catch (TimeoutException e) {
-            throw new RuntimeException("No se pudo hacer click en el elemento: " + locator + " después de " + TIMEOUT + " segundos", e);
+            throw new RuntimeException("Could not click on element: " + locator + " after " + TIMEOUT + " seconds", e);
         } catch (ElementClickInterceptedException e) {
             jsClick(driver.findElement(locator));
         } catch (StaleElementReferenceException e) {
@@ -44,7 +44,7 @@ public class BasePage {
             scrollToElement(element);
             wait.until(ExpectedConditions.visibilityOf(element)).sendKeys(text);
         } catch (TimeoutException e) {
-            throw new RuntimeException("No se pudo escribir en el elemento: " + locator + " después de " + TIMEOUT + " segundos", e);
+            throw new RuntimeException("Could not type into element: " + locator + " after " + TIMEOUT + " seconds", e);
         }
     }
 

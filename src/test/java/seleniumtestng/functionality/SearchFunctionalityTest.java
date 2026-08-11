@@ -16,11 +16,11 @@ public class SearchFunctionalityTest extends BaseTests {
     @Test
     public void searchForNonExistentPropertyTest(){
 
-        String operationtype = "Venta";
+        String operationType = "Venta";
         String propertyType = "Departamentos";
         String locationType = "Arturo Segui";
 
-        homePage.setOperationLocationAndPropertyTypeSuccessfully(operationtype, propertyType, locationType);
+        homePage.setOperationLocationAndPropertyTypeSuccessfully(operationType, propertyType, locationType);
         SearchResultsPage searchResultsPage = homePage.clickSearchButton();
 
         String expectedMessage = "no se han encontrado resultados";

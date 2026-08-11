@@ -19,7 +19,7 @@ public class PropertyDetail extends BasePage {
     private static final By phoneNumberField = By.id("consulta_form_telefono");
     private static final By submitButton = By.cssSelector("button.g-recaptcha");
     private static final By emailErrorMessage = By.xpath("//*[@id='consulta_form_email_error']/span");
-    private static final By nameErrorMesssage = By.xpath("//*[@id='consulta_form_nombre_error']/span");
+    private static final By nameErrorMessage = By.xpath("//*[@id='consulta_form_nombre_error']/span");
     private static final By phoneErrorMessage = By.xpath("//*[@id='consulta_form_telefono_error']/span");
 
     public void setNameField(String name){
@@ -55,7 +55,7 @@ public class PropertyDetail extends BasePage {
     }
 
     public String getNameErrorText(){
-        return getErrorText(nameErrorMesssage);
+        return getErrorText(nameErrorMessage);
     }
 
     public String getPhoneErrorText(){
